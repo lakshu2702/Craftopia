@@ -6,7 +6,6 @@ Craftopia is a beautifully designed website for showcasing and selling handmade 
 - [Features](#features)
 - [Live Demo](#live-demo)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Folder Structure](#folder-structure)
 
 ---
@@ -32,7 +31,7 @@ Follow these steps to run the project locally:
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/lakshu2702/Craftopia
+   git clone https://github.com/lakshu2702/Craftopia.git
    ```
 2. **Navigate to the Project Directory**  
    ```bash
@@ -40,17 +39,6 @@ Follow these steps to run the project locally:
    ```
 3. **Open the Project in a Browser**  
    Simply open `index.html` in your preferred browser.
-
----
-
-## **Usage**
-### **Pages Overview**
-- **Homepage**: Displays promotional banners, featured products, and a "Shop Now" button.  
-- **Shop Page**: Lists all products with images, names, and prices.  
-- **Cart Page**: Shows added items, subtotal, shipping costs, and total price.  
-- **Blog Page**: Features articles on handmade decor and lifestyle.  
-- **About Page**: Highlights the mission, values, and team behind Craftopia.  
-- **Contact Page**: Includes a form for users to submit messages.  
 
 ---
 
