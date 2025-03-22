@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craftopia</title>
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: justify;
+        padding: 20px;
+        margin-bottom: 15px;
+      }
+      .about-section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .about-image {
+        width: 50%;
+        max-width: 500px;
+      }
+      .about-content {
+        width: 50%;
+        text-align: left;
+      }
+      .about-section:nth-child(even) .about-content {
+        text-align: right;
+      }
+      .about-content p {
+        font-size: 16px;
+        color: #333;
+        line-height: 1.5;
+      }
+      .about-content h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .about-content blockquote {
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="img/logo.png" alt="logo" /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+          <a href="#" id="close"
+            ><i class="fa fa-times" aria-hidden="true"></i
+          ></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <li>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+      <h2>#KnowUs</h2>
+      <p>Connecting You with Meaningful Products</p>
+    </section>
+
+    <section class="about-section">
+      <img src="img/about/a1.jpg" alt="About us" class="about-image" />
+      <div class="about-content">
+        <h2>Who are we?</h2>
+        <p>
+            We are a vibrant and passionate community of artisans committed to honoring the timeless beauty of handmade arts and crafts. Our mission extends beyond mere craftsmanship; we strive to inspire creativity, encourage sustainable practices, and cultivate a deep sense of connection among artists and craft enthusiasts alike.  
+
+            Rooted in tradition yet embracing innovation, our diverse group of artisans brings together a wide range of skills, techniques, and cultural influences. Every piece we create is a reflection of dedication and artistry, carrying its own unique story—one that embodies history, craftsmanship, and personal expression.  
+                    </p>
+      </div>
+    </section>
+
+    <section class="about-section reverse">
+      <img src="img/about/a2.jpg" alt="Craft Workshop" class="about-image" />
+      <div class="about-content">
+        <h2>Workshops</h2>
+        <p>
+            In our community, we embrace the power of shared experiences, where creativity flourishes through collaboration and learning. Our workshops serve as a welcoming space for individuals of all skill levels to explore their artistic potential, express themselves, and connect with like-minded craft enthusiasts.  
+
+From pottery and painting to weaving and woodworking, our talented instructors provide hands-on guidance, ensuring that every participant gains valuable skills and confidence in their craft. Each session is designed to be both educational and inspiring, fostering a sense of accomplishment and creativity in a supportive environment.  
+
+          </p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <img src="img/about/a3.jpg" alt="Our Values" class="about-image" />
+      <div class="about-content">
+        <h2>Our Values</h2>
+        <p>
+            At Handmade Decors, our passion for craftsmanship, sustainability, and authenticity guides everything we do. Each piece we create is more than just decor—it’s a reflection of artistry, heritage, and purpose. Our core values shape our mission and bring meaning to our work:
+          </p>
+          <ul>
+            <li>
+              <strong>🌱 Sustainability:</strong> We are committed to using eco-friendly materials and sustainable processes, ensuring that our creations are not only beautiful but also kind to the planet.
+            </li>
+            <li>
+              <strong>❤️ Handcrafted with Love:</strong>Every item tells a story, infused with the care, skill, and creativity of our artisans, making each piece truly one of a kind.
+            </li>
+            <li>
+              <strong>🤝 Community-Driven:</strong> We believe in empowering artisans by supporting fair trade, ethical sourcing, and local craftsmanship, fostering a thriving creative community.
+            </li>
+          </ul>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <img src="img/about/a4.jpg" alt="Our Team" class="about-image" />
+      <div class="about-content">
+        <h2>Meet Our Artisans Head</h2>
+        <p>
+          Our team is a diverse group of talented artisans from around the world, each bringing their own unique skills and creativity to our handcrafted pieces. Their dedication to craftsmanship ensures that every item we create carries a special touch of artistry and tradition.
+        </p>
+        <p>
+          <strong>👩‍🎨 Lili</strong> - A master ceramic artist, Lili specializes in elegant pottery, blending modern aesthetics with timeless techniques.
+        </p>
+        <p>
+          <strong>👨‍🎨 AJ</strong> - An expert in wood carving and furniture making, AJ transforms raw materials into beautifully crafted, functional pieces.
+        </p>
+        <p>
+          <strong>👩‍🎨 Anne</strong> -Passionate about textile arts and macramé, Anne weaves intricate designs that add warmth and texture to any space.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <img src="img/about/a5.jpg" alt="Happy Customers" class="about-image" />
+      <div class="about-content">
+        <h2>What Our Customers Say</h2>
+        <p>
+            See what our happy customers have to say about our handcrafted decor:
+          </p>
+          <blockquote>
+            “Absolutely love the handmade pottery I ordered! The craftsmanship is
+            incredible, and it adds so much charm to my home.” —
+            <strong>Sarah M.</strong>
+          </blockquote><br>
+          <blockquote>
+            “The attention to detail in these products is amazing! Plus, I love
+            that they are eco-friendly.” — <strong>David L.</strong>
+          </blockquote><br>
+          <blockquote>
+            “Beautifully crafted and unique! Every piece feels personal, and I appreciate the sustainable approach.” <strong>— Emma R.</strong>
+          </blockquote><br>
+          <blockquote>
+            “I’ve attended several workshops and have learned so much from the talented instructors. It’s a great way to explore my creativity and connect with others.” <strong>— Alex.</strong>
+          </blockquote>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craftopia</title>
+    <link rel="icon" href="img/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+      header h1 {
+        margin: 0;
+        color: #088178;
+        font-size: 28px;
+      }
+      #cart-container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+      .cart-item img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      .cart-item div {
+        flex: 1;
+        margin-left: 20px;
+      }
+      .cart-item h4 {
+        margin: 0;
+        font-size: 18px;
+        color: #444;
+      }
+      .cart-item p {
+        margin: 5px 0;
+        color: #666;
+      }
+      .cart-item button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .cart-item button:hover {
+        background-color: #c0392b;
+      }
+      #cart-empty {
+        text-align: center;
+        font-size: 18px;
+        color: #777;
+      }
+      #cart-summary {
+        max-width: 1200px;
+        margin: 20px auto;
+        text-align: right;
+        font-size: 18px;
+        color: #333;
+      }
+      #cart-summary p {
+        margin: 5px 0;
+      }
+      #cart-summary .total {
+        font-weight: bold;
+        font-size: 22px;
+        color: #088178;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: white;
+        margin-top: 30px;
+      }
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Your Cart</h1>
+    </header>
+    <section id="cart-container"></section>
+    <div id="cart-summary"></div>
+    <div style="text-align: center; margin-top: 20px">
+      <button
+        onclick="redirectToShop()"
+        style="
+          background-color: #088178;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        ">
+        ← Continue Shopping
+      </button>
+    </div>
+    <script>
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function displayCartItems() {
+        const cartContainer = document.getElementById("cart-container");
+        const cartSummary = document.getElementById("cart-summary");
+        cartContainer.innerHTML = "";
+        cartSummary.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML =
+            '<p id="cart-empty">Your cart is empty!</p>';
+          return;
+        }
+
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+          const cartItem = document.createElement("div");
+          cartItem.classList.add("cart-item");
+          cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h4>${item.name}</h4>
+                        <p>Price: ${item.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+          cartContainer.appendChild(cartItem);
+
+          subtotal += parseFloat(item.price.replace("₹", "").replace(",", ""));
+        });
+
+        const shipping = 200;
+        const grandTotal = subtotal + shipping;
+
+        cartSummary.innerHTML = `
+                <p style="color: #444;">Subtotal: ₹${subtotal.toFixed(2)}</p>
+                <p style="color: #666;">Shipping: ₹${shipping.toFixed(2)}</p>
+                <p class="total" style="color: #088178; font-weight: bold;">Grand Total: ₹${grandTotal.toFixed(
+                  2
+                )}</p>
+            `;
+      }
+
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCartItems();
+      }
+
+      function redirectToShop() {
+        window.location.href = "shop.html";
+      }
+
+      displayCartItems();
+    </script>
+  </body>
+</html>
